@@ -2,13 +2,13 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Among Us Launcher"
-        Height="560" Width="660"
+        Height="560" Width="720"
         WindowStartupLocation="CenterScreen"
         Background="{StaticResource BgDarkBrush}"
         Foreground="{StaticResource TextPrimaryBrush}"
         FontFamily="Segoe UI"
         ResizeMode="CanResize"
-        MinHeight="450" MinWidth="520">
+        MinHeight="450" MinWidth="580">
 
     <Grid Margin="25">
         <Grid.RowDefinitions>
@@ -38,13 +38,24 @@
             <Button x:Name="DownloadButton" Content="&#x2B07; Download"
                     Style="{StaticResource ActionButton}"
                     Background="{StaticResource AccentPrimaryBrush}"
-                    Margin="0,0,14,0"
+                    Margin="0,0,8,0"
                     Click="DownloadButton_Click"/>
             <Button x:Name="PlayButton" Content="&#x25B6; Play"
                     Style="{StaticResource ActionButton}"
                     Background="{StaticResource AccentGreenBrush}"
                     IsEnabled="False"
+                    Margin="0,0,8,0"
                     Click="PlayButton_Click"/>
+            <Button x:Name="OpenFolderButton" Content="&#x1F4C2; Open Folder"
+                    Style="{StaticResource ActionButton}"
+                    Background="{StaticResource BgBorderBrush}"
+                    IsEnabled="False"
+                    Margin="0,0,8,0"
+                    Click="OpenFolderButton_Click"/>
+            <Button x:Name="UninstallButton" Content="&#x1F5D1; Uninstall"
+                    Style="{StaticResource ActionButton}"
+                    Background="{StaticResource AccentRedBrush}"
+                    Click="UninstallButton_Click"/>
         </StackPanel>
 
         <!-- Progress -->

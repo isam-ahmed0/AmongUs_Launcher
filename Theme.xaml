@@ -7,6 +7,7 @@
     <Color x:Key="BgBorder">#2A2A3E</Color>
     <Color x:Key="AccentPrimary">#6C63FF</Color>
     <Color x:Key="AccentGreen">#34C759</Color>
+    <Color x:Key="AccentRed">#FF3B30</Color>
     <Color x:Key="TextPrimary">#E0E0E0</Color>
     <Color x:Key="TextMuted">#888888</Color>
 
@@ -16,13 +17,14 @@
     <SolidColorBrush x:Key="BgBorderBrush" Color="{StaticResource BgBorder}"/>
     <SolidColorBrush x:Key="AccentPrimaryBrush" Color="{StaticResource AccentPrimary}"/>
     <SolidColorBrush x:Key="AccentGreenBrush" Color="{StaticResource AccentGreen}"/>
+    <SolidColorBrush x:Key="AccentRedBrush" Color="{StaticResource AccentRed}"/>
     <SolidColorBrush x:Key="TextPrimaryBrush" Color="{StaticResource TextPrimary}"/>
     <SolidColorBrush x:Key="TextMutedBrush" Color="{StaticResource TextMuted}"/>
 
     <!-- Button Base Style -->
     <Style TargetType="Button" x:Key="ActionButton">
         <Setter Property="Height" Value="44"/>
-        <Setter Property="Width" Value="170"/>
+        <Setter Property="Width" Value="145"/>
         <Setter Property="FontSize" Value="15"/>
         <Setter Property="FontWeight" Value="SemiBold"/>
         <Setter Property="Cursor" Value="Hand"/>
@@ -45,6 +47,44 @@
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="False">
                             <Setter TargetName="Border" Property="Opacity" Value="0.35"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- Option Card Button -->
+    <Style TargetType="Button" x:Key="OptionButton">
+        <Setter Property="Height" Value="80"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BgBorderBrush}"/>
+        <Setter Property="Background" Value="{StaticResource BgSurfaceBrush}"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Border" Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="10" Padding="14,10">
+                        <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="Border" Property="BorderBrush" Value="{StaticResource AccentPrimaryBrush}"/>
+                            <Setter TargetName="Border" Property="Background">
+                                <Setter.Value>
+                                    <SolidColorBrush Color="#222244"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="Border" Property="Background" Value="#2A2A5C"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="Border" Property="Opacity" Value="0.4"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

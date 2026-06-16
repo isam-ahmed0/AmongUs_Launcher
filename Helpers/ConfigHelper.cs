@@ -9,6 +9,7 @@ public class AppConfig
     public string RawUrl { get; set; } = "https://raw.githubusercontent.com/YOUR_USER/YOUR_REPO/main/amongus.txt";
     public string InstallPath { get; set; } = "%LOCALAPPDATA%\\AmongUsLauncher";
     public string ExeName { get; set; } = "";
+    public bool Registered { get; set; }
 
     public string ResolvedInstallPath => Environment.ExpandEnvironmentVariables(InstallPath);
 }
