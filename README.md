@@ -2,6 +2,8 @@
 
 A Windows desktop launcher that downloads Among Us from a configurable source and launches the game.
 
+![Preview](https://github.com/isam-ahmed0/AmongUs_Launcher/blob/main/Screenshot%20(163).png?raw=true)
+
 ## Features
 
 - **Download** — Fetches the latest game archive from a remote URL, extracts it, and cleans up
